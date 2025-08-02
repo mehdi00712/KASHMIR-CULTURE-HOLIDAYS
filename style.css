@@ -1,1319 +1,309 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+  line-height: 1.6;
+  background-color: #f9f9f9;
 }
 
-
-/*------------------------------------------------------------  Defining Pages Styles ---------------------------------------------------------------------------*/
-
-
-#page1 {
-  background-image: url('1.jpg'); /* Make sure the path is correct */
-  background-size: 500px auto;              /* Sets a fixed width, adjusts height proportionally */
-  background-repeat: no-repeat;
-  background-position: center top;
-  height: 100vh;
+/* General Section Styling */
+.section {
+  min-height: 100vh;
+  padding: 5vh 5vw;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
-  padding-top: 50px;
-  position: relative;
-}
-
-
-#page2 {
-  position: relative;
-}
-
-#page3 {                                                   
-  position: relative;
-}
-
-#page4 {
-  position: relative;
-}
-
-#page5 {
-  position: relative;
-}
-
-#page6 {
-  position: relative;
-}
-
-#page7 {
-  background-image: url('Assets/ria-oZzoDW61aoM-unsplash.jpg');
-  background-size: cover;                                                    
-  background-position: center;                                              
-  position: relative;
-
-}
-
-
-/*------------------------------------------------------------  Defining Image Styles ---------------------------------------------------------------------------*/
-
-
-
-.rounded-image-1 {                                /* Define the style for elements with the class 'rounded-image-1' */
-  border-radius: 35px;                            /* Rounded corners */
-  width: 300px;                                   /* Adjust the width of the image */
-  height: auto;                                   /* Maintain aspect ratio */
-  position: absolute;                             /* Position the element absolutely within its containing element */
-  top: 105px;                                     /* Adjust the distance from the top */
-  left: 40px;                                     /* Adjust the distance from the left */
-  animation: slideInFromLeft 2.5s ease-out;       /* Apply an animation with a duration of 2.5 seconds and ease-out timing function */
-}
-
-.rounded-image-2 {
-  border-radius: 35px;             
-  width: 300px;                   
-  height: auto;                  
-  position: absolute;
-  top: 320px;                                     
-  left: 40px;                                   
-  animation: slideInFromLeft 2.5s ease-out;
-}
-
-.rounded-image-3 {
-  border-radius: 35px;          
-  width: 300px;                 
-  height: auto;               
-  position: absolute;
-  top: 520px;                                   
-  left: 40px;                                   
-  animation: slideInFromLeft 2.5s ease-out;
-}
-
-.rounded-image-4 {
-  border-radius: 45px;          
-  width: 350px;                
-  height: 650px;              
-  position: absolute;
-  top: 30px;                                      
-  left: 1000px;                                 
-  animation: slideInFromRight 3.5s ease-out;
-}
-
-.rounded-image-5 {
-  border-radius: 35px;        
-  width:570px;               
-  height:auto;            
-  position: absolute;
-  top: 200px;                                        
-  left: 120px;                                     
-  animation: slideInFromLeft 4.5s ease-out;
-}
-
-.rounded-image-6 {
-  border-radius: 35px;            
-  width:270px;                   
-  height:auto;                  
-  position: absolute;
-  top: 530px;                      
-  right: 220px;                    
-}
-
-.rounded-image-7 {
-  width:100px;            
-  height:auto;           
-  position: absolute;
-  top: 140px;                 
-  right: 240px;               
-}
-
-.rounded-image-9 {
-  border-radius: 35px;        
-  width: 250px;              
-  height: auto;             
-  position: absolute;
-  top: 270px;                                     
-  left: 110px;                                    
-  animation: slideInFromLeft 2.5s ease-out;
-}
-
-.rounded-image-10 {
-  border-radius: 35px;            
-  width: 200px;                  
-  height: auto;                 
-  position: absolute;
-  top: 180px;                                 
-  left: 660px;                                
-  animation: slideInFromTop 2.5s ease-out;
-}
-
-.rounded-image-11 {
-  border-radius: 35px;          
-  width: 250px;                
-  height: auto;               
-  position: absolute;
-  top: 270px;                                       
-  right: 100px;                                     
-  animation: slideInFromRight 2.5s ease-out;
-}
-
-
-
-/*------------------------------------------------------------  Defining Testemonials Name Styles ---------------------------------------------------------------------------*/
-
-
-
-.name1 {
-  position: absolute;                                   /* Position the title */
-  top: 460px;                                           /* Adjust the distance from the top */
-  left: 170px;                                          /* Adjust the distance from the left */
-  font-family:'Poppins';                                /* Specify font */
-  font-weight: bold;                                    /* Make it bold */
-  font-size: 20px;                                      /* Adjust the font size */
-  color: #ffffff;                                     /* font color */
-  animation: slideInFromLeft 2.5s ease-out;             /* Apply an animation with a duration of 2.5 seconds and ease-out timing function */
-}
-
-.name2 {
-  position: absolute;                                    
-  top: 450px;                                          
-  left:690px;                                          
-  font-family:'Poppins', sans-serif;                  
-  font-weight: bold;                                 
-  font-size: 20px;                                  
-  color: #ffffff;                                 
-  animation: slideInFromBottom 2.5s ease-out;
-}
-
-.name3 {
-  position: absolute;                                   
-  top: 450px;                                         
-  right: 140px;                                       
-  font-family:'Poppins', sans-serif;                 
-  font-weight: bold;                                
-  font-size: 20px;                                 
-  color: #ffffff;                                
-  animation: slideInFromRight 2.5s ease-out;
-}
-
-
-.services-section {
-  display: flex;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-  gap: 20px;
-  align-items: flex-start;
-}
-
-.services-text {
-  flex: 1 1 60%;
-  font-size: 25px;
-  color: #333;
-}
-
-.videos-container {
-  flex: 0 0 35%;
-  display: flex;
-  gap: 15px;
-  flex-wrap: nowrap; /* keep videos side-by-side */
-}
-
-.videos-container video {
-  width: 50%; /* each video takes half of videos container */
-  height: auto;
-  border-radius: 8px;
-  object-fit: cover;
-  max-height: 400px; /* adjust if needed */
-}
-
-.small-text {
-  font-size: 15px;
-  color: #5e5e5e; /* Optional: makes it a bit lighter */
-}
-
-
-
-
-/*------------------------------------------------------------  Defining Sub Titles Styles ---------------------------------------------------------------------------*/
-
-
-
-
-.title-sub-1-page-2 {
-  position: absolute;                                 /* Position the title */
-  top: 95px;                                          /* Adjust the distance from the top */
-  left: 370px;                                        /* Adjust the distance from the left */
-  font-family:'Poppins', sans-serif;                  /* Specify font */
-  font-weight: bold;                                  /* Make it bold */
-  font-size: 25px;                                    /* Adjust the font size */
-  color: #45454b;                                   /*  font color */
-  animation: slideInFromRight 2s ease-out;     
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0 20px;
-  line-height: 1.6;      /* Apply an animation with a duration of 2 seconds and ease-out timing function */
-}
-
-.title-sub-2-page-2 {
-  position: absolute;                                  
-  top: 310px;                                          
-  left: 370px;                                        
-  font-family:'Poppins', sans-serif;                 
-  font-weight: bold;                                
-  font-size: 25px;                                 
-  color: #45454b;                               
-  animation: slideInFromRight 2s ease-out;
-}
-
-.title-sub-3-page-2 {
-  position: absolute;                                          
-  top: 500px;                                                  
-  left: 370px;                                                
-  font-family:'Poppins', sans-serif;                         
-  font-weight: bold;                                        
-  font-size: 25px;                                         
-  color: #45454b;                                       
-  animation: slideInFromRight 2s ease-out;
-}
-
-/*------------------------------------------------------------  Defining Page 2 Description Styles ---------------------------------------------------------------------------*/
-
-
-.description-1 {
-  position: absolute;                                       /* Position the introduction */
-  top: 170px;                                               /* Adjust the distance from the top */
-  left: 370px;                                              /* Adjust the distance from the left */
-  font-family: 'Poppins', sans-serif;                       /* Specify Poppins font */
-  font-size: 15px;                                          /* Adjust the font size */
-  line-height: 1.5;                                         /* Adjust line height for better readability */
-  width: 65%;                                               /* Adjust the width of the container */
-  animation: slideInFromRight 2.5s ease-out;                /* Apply an animation with a duration of 2.5 seconds and ease-out timing function */
-  
-}
-
-.description-2 {
-  position: absolute;                                         
-  top: 385px;                                                
-  left: 370px;                                             
-  font-family: 'Poppins', sans-serif;                      
-  font-size: 15px;                                       
-  line-height: 1.5;                                     
-  width: 65%;                                          
-  animation: slideInFromRight 2.5s ease-out;
-}
-
-.description-3 {
-  position: absolute;                                        
-  top: 580px;                                               
-  left: 370px;                                            
-  font-family: 'Poppins', sans-serif;                     
-  font-size: 15px;                                      
-  line-height: 1.5;                                    
-  width: 65%;                                         
-  animation: slideInFromRight 2.5s ease-out;
-}
-
-
-/*------------------------------------------------------------  Defining Main Ttiles Styles ---------------------------------------------------------------------------*/
-
-
-
-.title3 {
-  position: absolute;                                         /* Position the title */
-  top: 30px;                                                  /* Adjust the distance from the top */
-  left: 30px;                                                 /* Adjust the distance from the left */
-  font-family:'Poppins', sans-serif;                          /* Specify  font */
-  font-weight: bold;                                          /* Make it bold */
-  font-size: 50px;                                            /* Adjust the font size */
-  width: 55%;                                                 /* Adjust the width of the container */
-  color: #1f1f1f;                                           /*font color */
-  animation: fadeInAndScale 4s ease;                          /* Apply an animation with a duration of 4 seconds and ease timing function */
-  
-
-}
-
-.title3-1 {
-  position: absolute;                                      
-  top: 200px;                                           
-  left: 370px;                                           
-  font-family:'Poppins', sans-serif;                    
-  font-weight: bold;                                  
-  font-size: 35px;                                   
-  width: 58%;                                        
-  color: #294646;                             
+  align-items: center;
   text-align: center;
-  
-  
-
 }
 
-.title2 {
-  position: absolute;                                         /* Position the title */
-  top: 30px;                                                  /* Adjust the distance from the top */
-  left: 30px;                                                 /* Adjust the distance from the left */
-  font-family:'Poppins', sans-serif;                          /* Specify  font */
-  font-weight: bold;                                          /* Make it bold */
-  font-size: 50px;                                            /* Adjust the font size */
-  width: 55%;                                                 /* Adjust the width of the container */
-  color: #1f1f1f;                                           /*font color */
-  animation: fadeInAndScale 4s ease; 
+/* Page 1 - Hero */
+#page1 {
+  background: none;
 }
 
+.hero-image {
+  width: 70%;
+  height: auto;
+  max-height: 80vh;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
 
 
 .title {
-  position: absolute;                                        
-  top: 5px;                                               
-  left: 30px;                                              
-  font-family:'Poppins', sans-serif;                  
-  font-weight: bold;                                    
-  font-size: 50px;                                     
-  width: 35%;                                          
-  color: #292828;                                  
-  animation: slideInFromLeft 2.5s ease;
-
-
+  font-size: 4vw;
+  font-family: 'Dancing Script', cursive;
+  margin-bottom: 10px;
 }
-
-.title4 {
-  position: absolute;                                          
-  top: 40px;                                                
-  left: 100px;                                               
-  font-family:'Poppins', sans-serif;                       
-  font-weight: bold;                                      
-  font-size: 45px;                                       
-  width: 50%;                                            
-  color: #484848;                                    
-  animation: slideInFromTop 1.0s ease-out;
-  
-
-}
-
-.title5 {
-  font-family: 'Poppins', sans-serif;
-  font-weight: bold;
-  font-size: 45px;             
-  position: absolute;
-  top: 10px; 
-  left: center ;
-  width:auto ;
-  color: #000000; 
-  animation: slideInFromTop 1.5s ease-out;
-}
-
-.title6 {
-  font-family: 'Poppins', sans-serif;
-  font-weight: bold;
-  font-size: 55px; 
-  position: absolute;
-  top: 5px; 
-  right: center;
-  width:auto ;
-  color: #4a4b4b;
-  animation: slideInFromTop 2.5s ease-out;
-}
-
-.title7 {
-  font-family: 'Poppins', sans-serif;
-  font-weight: bold;
-  font-size: 35px; 
-  position: absolute;
-  top: 170px; 
-  left: 30px;
-  width: 900px; ;
-  color: #4a4b4b;
-  animation: slideInFromLeft 2.7s ease-out;
-}
-
-.title8 {
-  font-family: 'Poppins', sans-serif;
-  font-weight: bold;
-  font-size: 35px; 
-  position: absolute;
-  bottom: 220px;
-  right: 30px;
-  width:auto ;
-  color: #4a4b4b; 
-}
-
-.title9 {
-  font-family: 'Poppins', sans-serif;
-  font-weight: bold;
-  font-size: 55px; 
-  position: absolute;
-  top: 5px; 
-  right: center;
-  width:auto ;
-  color: #ffffff; 
-  animation: slideInFromTop 2.5s ease-out;
-}
-
-
-/*------------------------------------------------------------  Defining Testemonials Review Styles ---------------------------------------------------------------------------*/
-
-.Review3 {
-  position: absolute;                                          
-  text-align: center;
-  bottom: 190px;                                              
-  right: 600px;                                             
-  font-family: 'Poppins', sans-serif;                       
-  font-size: 15px;                                        
-  line-height: 1.5;                                      
-  width: 20%;                                            
-  margin-bottom: 0px;                                  
-  color: #ffffff;
-  animation: slideInFromBottom 2.5s ease-out;
-}
-
-
-/*------------------------------------------------------------  Defining Other Main Title Styles ---------------------------------------------------------------------------*/
-
 
 .introduction {
-  position: absolute;                                         /* Position the introduction */
-  top: 240px;                                                 /* Adjust the distance from the top */
-  left: 30px;                                                 /* Adjust the distance from the left */
-  font-family: 'Poppins';                                     /* Specify Poppins font */
-  font-size: 20px;                                            /* Adjust the font size */
-  line-height: 1.5;                                           /* Adjust line height for better readability */
-  color: #ff2222;                                           /* Text colour */
-  width: 60%;                                                 /* Adjust the width of the container */
-  margin-bottom: 20px;                                        /* Add space between the introduction and the button */
-  animation: fadeInAndScale 4s ease;
-
-
+  font-size: 2vw;
+  font-style: italic;
+  margin-bottom: 30px;
 }
 
-.introduction2 {
-  position: absolute;                               
-  text-align: center;
-  top: 165px;                                      
-  right: 100px;                                    
-  font-family: 'Poppins';                         
-  font-size: 16px;                               
-  line-height: 1.5;                             
-  width: 35%;                                   
-  margin-bottom: 20px;                         
-  animation: fadeInAndScale 7.5s ease-out;
-}
-
-
-/*------------------------------------------------------------  Defining Main Page Button Styles ---------------------------------------------------------------------------*/
-
-.button-container {                    
-  position: absolute;                    /* Position the element absolutely within its containing element */
-  top: 30px;                             /* Adjust the distance of the top edge of the element from its containing element */
-  right: 20px;                           /* Adjust the distance of the right edge of the element from its containing element */
-  display: flex;                         /* Use flexbox layout for the element */
+.button-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
 }
 
 .button {
-  display: inline-block;
   background-color: #004116;
-  color: #fff;
+  color: white;
   padding: 12px 24px;
-  margin: 10px;
   border-radius: 8px;
   text-decoration: none;
-  font-size: 18px;
-  transition: background-color 0.3s ease;
+  font-size: 1rem;
+  transition: background 0.3s ease;
 }
 
 .button:hover {
-  background-color: #444;
+  background-color: #333;
 }
-
-
-
-
-.YTbutton {
-  display: inline-block;                     
-  font-family:'Poppins', sans-serif;         
-  font-size: 15px;                         
-  width: 100px;
-  padding: 15px 60px;
-  margin-right: 10px;                
-  background-color: #4e4e4e;       
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 50px;                             
-  transition: background-color 1.0s ease;         
-}
-
-.YTbutton:hover {
-  background-color: #0ab126;                  
-}
-
-.FBbutton {
-  display: inline-block;                               
-  font-family:'Poppins', sans-serif;                   
-  font-size: 15px;                                   
-  width: 100px;
-  padding: 15px 60px;
-  margin-right: 10px;                             
-  background-color: #4e4e4e;                   
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 50px;                                
-  transition: background-color 1.0s ease;           
-}
-
-.FBbutton:hover {
-  background-color: #1877F2;                 
-}
-
-.button-container2 {
-  position: absolute;
-  top: 350px;
-  right: 120px;
-  display: flex;                                     
-  animation: slideInFromRight 3.5s ease-out;
-}
-
-
-
-.IGbutton {
-  display: inline-block;                           
-  font-family:'Poppins', sans-serif;               
-  font-size: 15px;                               
-  width: 100px;
-  padding: 15px 60px;
-  margin-right: 10px;                            
-  background-color: #414343;                  
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 50px;                                
-  transition: background-color 1.0s ease;             
-}
-
-.IGbutton:hover {
-  background-color: #8a1919;                
-}
-
-
-.TWbutton {
-  display: inline-block;                        
-  font-family:'Poppins', sans-serif;            
-  font-size: 15px;                            
-  width: 100px;
-  padding: 15px 60px; 
-  margin-right: 10px;                              
-  background-color: #414343;                    
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 50px;                             
-  transition: background-color 1.0s ease;         
-}
-
-.TWbutton:hover {
-  background-color: #000000;                   
-}
-
-.button-container3 {
-  position: absolute;
-  top: 425px;
-  right: 120px;
-  display: flex;                                
-  animation: slideInFromLeft 3.5s ease-out;
-}
-
-
-/*------------------------------------------------------------  Defining Page 4 Line Style ---------------------------------------------------------------------------*/
-
-.line {
-  font-weight: bold;              /* Makes the text bold */
-  font-size: 40px;                /* Adjust font size as needed */
-  position: absolute;             /* Allows precise positioning */
-  top: 440px;                     /* Adjust top position */
-  right: 160px;                   /* Positions the element from the right side of its container */
-  width: 500px;                   /* Sets the width of the element */
-  color: #000000;               /* Font color */
-}
-
-/*------------------------------------------------------------  Defining Table List Styles ---------------------------------------------------------------------------*/
-
-
-
-.genre-list ul {
-  list-style-type: symbols(♦);                   /* Remove default bullet points and use custom symbol */
-  padding: 30px;                                 /* Add padding around the list */
-  position: absolute;                            /* Allows precise positioning */
-  top: 180px;                                    /* Adjust top position */
-  animation: slideInFromLeft 2.0s ease-out;      /* Apply animation for sliding in from left */
-}
-
-.genre-list li {
-  margin-bottom: 10px;                   /* Add space between list items */
-  font-size: 28px;                       /* Adjust font size */
-}
-
-
-
-
-.genre-list2 ul {
-  list-style-type: symbols(♦);                   /* Remove default bullet points and use custom symbol */
-  padding: 10px;                                 /* Add padding around the list */
-  font-family: 'Poppins', sans-serif;            /* Set the font family */
-  position: absolute;                            /* Allows precise positioning */
-  left: 50px;                                    /* Adjust left position */
-  top: 300px;                                    /* Adjust top position */
-  animation: slideInFromLeft 3.5s ease-out;      /* Apply animation for sliding in from left */
-}
-
-
-.genre-list2 li {
-  margin-bottom: 10px;                              
-  font-size: 20px;                                 
-  font-weight: bold;
-}
-
-.genre-list3 ul {
-  list-style-type:none;                         
-  padding:10px; 
-  font-family:'Poppins', sans-serif;            
-  position:absolute;
-  left: 300px;
-  top: 300px;
-  animation: slideInFromLeft 3.5s ease-out;
-}
-
-.genre-list3 li {
-  margin-bottom: 10px;                   
-  font-size: 20px;                     
-  font-weight: bold;
-}
-
-
-.button:last-child {
-  margin-right: 0;                   
-}
-
-
-/*------------------------------------------------------------  Defining More Button Styles ---------------------------------------------------------------------------*/
-
-
 
 .page-2-button {
-  display: inline-block;                                        /* Display the button as inline-block */
-  font-family:'Poppins', sans-serif;                            /* Specify your fancy font */
-  font-size: 23px;                                              /* Adjust the font size */
-  padding: 15px 450px;                                          /* Adjust padding for top and sides */
-  background-color: #008dce;                                  /* Set background color */
-  color: white;                                               /* Set text color */
-  text-decoration: none;                                        /* Remove default text decoration */
-  border-radius: 50px;                                          /* Round corners */
-  transition:transform 1.0s ease;                               /* Add a smooth transition effect */
-  position: absolute;                                           /* Position the button */
-  top: 550px;                                                   /* Adjust the distance from the bottom */
-  left: center;                                                 /* Adjust the distance from the left */
-  animation: pulsate 2.5s infinite alternate;                   /* Apply pulsate animation with infinite alternate */
-  
-}
-
-.page-5-button {
-  display: inline-block;
-  font-family:'Poppins', sans-serif;                                   
-  font-size: 25px;                                                    
-  padding: 20px 330px;
-  background-color: #757575;                                      
-  color: white;
+  margin-top: 20px;
+  font-size: 1.5rem;
+  color: #004116;
   text-decoration: none;
-  border-radius: 40px;                                               
-  transition: background-color 1.5s ease;                           
-  position: absolute;                                            
-  top: 630px;                                                   
-  left: 35px;                                                   
-  animation: slideInFromBottom 5.5s ease-out;
+  border: 2px solid #000000;
+  padding: 10px 20px;
+  border-radius: 10px;
 }
 
-.page-5-button:hover {
-  background-color: #0a2b3b;                              
-}
-.page-6-button-back {
-  display: inline-block;
-  font-family:'Poppins', sans-serif;                    
-  font-size: 25px;                                     
-  padding: 10px 347px;
-  background-color: #2a2a2a; 
-  color: white;
-  text-decoration: none;
-  border-radius: 40px;                                 
-  transition: background-color 1.5s ease;             
-  position: absolute;                              
-  bottom: 40px;                                   
-  left: 55px;                                     
-  animation: slideInFromBottom 1.5s ease-out;
+/* Page 2 - About Us */
+.title2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
 }
 
-.page-6-button-back:hover {
-  background-color: #05334a; 
+.title-sub-1-page-2 {
+  font-size: 1.1rem;
+  max-width: 900px;
+  margin-bottom: 30px;
+  padding: 0 10px;
 }
 
-
-.page-7-home-button {
-  display: inline-block;
-  font-family:'Poppins', sans-serif;             
-  font-size: 25px;                              
-  padding: 10px 150px;
-  background-color: #282828; 
-  color: white;
-  text-decoration: none;
-  border-radius: 40px;                               
-  transition: background-color 1.5s ease;           
-  position: absolute;                            
-  top: 650px;                                   
-  left: center;                                 
-  animation: fadeInAndScale 4.5s ease-out;
+#page2 video {
+  width: 100%;
+  max-width: 500px;
+  margin: 10px;
+  border-radius: 12px;
 }
 
-.page-7-home-button:hover {
-  background-color: #031c2a; 
-}
-
-
-.page-6-button-8 {
-  display: inline-block;
-  font-family:'Poppins', sans-serif;                    
-  font-size: 25px;                                     
-  padding: 10px 330px;
-  background-color: #757575; 
-  color: white;
-  text-decoration: none;
-  border-radius: 40px;                               
-  transition: background-color 1.5s ease;           
-  position: absolute;                            
-  bottom: 120px;                                
-  left: 55px;                                   
-  animation: slideInFromBottom 1.5s ease-out;
-}
-
-.page-6-button-8:hover {
-  background-color: #0a2b3b; 
-}
-
-
+.page-3-button,
 .page-1-button {
-  display: inline-block;
-  font-family:'Poppins', sans-serif;                    
-  font-size: 30px;                                     
-  padding: 9px 45px;
-  background-color: #28292a; 
-  color: white;
+  margin: 10px;
+  font-size: 2rem;
   text-decoration: none;
-  border-radius: 50px; 
-  transition:transform 1.0s ease;
-  position: absolute;                        
-  top: 660px;                               
-  right: 190px;                             
+  color: #004116;
 }
 
-.page-1-button:hover {
-  transform: scale(1.15); 
+/* Page 3 - Services */
+.title3 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
 }
 
-
-
-
-.page-7-button {
-  display: inline-block;
-  font-family:'Poppins', sans-serif;                
-  font-size: 30px;                                 
-  padding: 5px 180px;
-  background-color: #28292a; 
-  color: white;
-  text-decoration: none;
-  border-radius: 40px;                                     
-  transition:transform 1.0s ease;                         
-  position: absolute;                                  
-  bottom: 50px;                                       
-  left: center;                                       
-  animation: slideInFromBottom  2.5s ease-out;
+.services-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 20px;
 }
 
-
-.page-7-button:hover {
-  transform: scale(1.15); 
+.services-text ul {
+  list-style: disc;
+  padding-left: 20px;
+  font-size: 1rem;
 }
 
-
-.page-3-button {
-  display: inline-block;
-  font-family:'Poppins', sans-serif;                        
-  font-size: 40px;                                         
-  padding: 2px 40px;
-  background-color: #28292a;                     
-  color: white;
-  text-decoration: none;
-  border-radius: 50px;                           
-  transition:transform 1.0s ease;
-  position: absolute;                           
-  top: 660px;                                  
-  right: 50px;                                 
+.videos-container video {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+  margin: 5px;
 }
 
-.page-3-button:hover {
-  transform: scale(1.15); 
-}
-
-
-.page-4-button {
-  display: inline-block;
-  font-family:'Poppins', sans-serif;                  
-  font-size: 40px;                                   
-  padding: 2px 40px;
-  background-color: #0d2a2b; 
-  color: white;
-  text-decoration: none;
-  border-radius: 50px;  
-  transition:transform 1.0s ease;
-  position: absolute;                        
-  top: 620px;                               
-  left: 735px;                              
-}
-
-.page-4-button:hover {
-  transform: scale(1.10);
-}
-
+.main-page-button-2,
+.page-4-button,
 .page-3-button-1 {
-  display: inline-block;
-  font-family:'Poppins', sans-serif;                 
-  font-size: 40px;                                  
-  padding: 2px 40px;
-  background-color: #0d2a2b; 
-  color: white;
   text-decoration: none;
-  border-radius: 50px; 
-  transition:transform 1.0s ease;
-  position: absolute;                   
-  top: 620px;                          
-  left: 105px;                         
+  font-size: 1.5rem;
+  margin: 10px;
+  color: #004116;
 }
 
-.page-3-button-1:hover {
-  transform: scale(1.10); 
+/* Page 4 - Contact */
+.title4 {
+  font-size: 2rem;
+  margin-bottom: 20px;
 }
 
+.Celestial img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
 
+.button-container2, .button-container3 {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 10px 0;
+}
 
-
-.page-4-button-back {
-  display: inline-block;
-  font-family:'Poppins', sans-serif;                
-  font-size: 25px;                                 
-  padding: 10px 90px;
-  background-color: #28292a; 
+.YTbutton, .IGbutton, .TWbutton {
+  background-color: #004116;
   color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
   text-decoration: none;
-  border-radius: 25px;                                      
-  transition:transform 1.0s ease;                          
-  position: absolute;                                   
-  bottom: 40px;                                        
-  right: 40px;                                         
-  animation: slideInFromRight 1.5s ease-out;
+  font-size: 1rem;
 }
 
-.page-4-button-back:hover {
-  transform: scale(1.15);                           
+.YTbutton:hover,
+.IGbutton:hover,
+.TWbutton:hover {
+  background-color: #222;
 }
 
-.page-2-button:hover {
-  transform: scale(1.15);  
-}
-
-.main-page-button {
-  display: inline-block;
-  font-family:'Poppins', sans-serif;                       
-  font-size: 23px;                                        
-  padding: 15px 350px;
-  background-color: #e20606; 
-  color: white;
+.page-4-button-back,
+.page-5-button {
   text-decoration: none;
-  border-radius: 50px;                               
-  transition:transform 1.0s ease;                   
-  position: absolute;                            
-  top: 650px;                                   
-  left: center;                                 
+  margin: 10px;
+  font-size: 1.5rem;
+  color: #004116;
 }
 
-.main-page-button-2 {
-  display: inline-block;
-  font-family:'Poppins', sans-serif;                 
-  font-size: 23px;                                  
-  padding: 15px 200px;
-  background-color: #32322f; 
-  color: white;
-  text-decoration: none;
-  border-radius: 30px;                                      
-  transition: background-color 1.5s ease;                  
-  position: absolute;                                   
-  top: 620px;                                          
-  left: 250px;                                         
+/* Page 5 - Business Hours */
+.title5 {
+  font-size: 2rem;
+  margin-bottom: 20px;
 }
-
-
-
-.main-page-button-2:hover {
-  background-color: #0a2b3b;
-}
-
-.main-page-button:hover {
-  transform: scale(1.15); 
-}
-
-
-/*------------------------------------------------------------  Defining Opening Time Styles ---------------------------------------------------------------------------*/
-
 
 .custom-table {
-  border-collapse: collapse;                         /* Collapse table borders */
-  width: 120%;                                       /* Adjust table width */
-  position: absolute;                                /* Allows precise positioning */
-  font-family: 'Poppins', sans-serif;                /* Specify your fancy font */
-  font-size: 23px;                                   /* Adjust the font size */
-  top: 150px;                                        /* Adjust top position */
-  left: 240px;                                       /* Adjust left position */
-  animation: slideInFromBottom 2.5s ease-out;        /* Apply animation for sliding in from bottom */
+  width: 100%;
+  max-width: 600px;
+  border-collapse: collapse;
+  margin-bottom: 30px;
 }
 
-
-.custom-table th, .custom-table td {
-  border: 5px solid #000000;                       /* Set border for cells */
-  text-align: left;                                  /* Align text to the left within cells */
-  border-style: hidden;                              /* Hide default border styles */
-  padding: 10px;                                     /* Add padding to cells */
+.custom-table th,
+.custom-table td {
+  border: 1px solid #ccc;
+  padding: 12px;
+  text-align: center;
 }
 
-
-.introduction {
-  font-family: 'Dancing Script', cursive;
-  font-size: 1.5em;
-  font-weight: bold;
-  text-align: left; /* Aligns text to the left */
-  margin-left: 20px; /* Optional: Adds space from the left edge */
+.custom-table th {
+  background-color: #004116;
+  color: white;
 }
 
-
-
-
-.section {
-  height: 100vh;                        /* Set section height to 100% of viewport height */
-  display: flex;                        /* Use flexbox layout */
-  justify-content: center;              /* Horizontally center content */
-  align-items: center;                  /* Vertically center content */
-  font-size: 24px;                      /* Set font size */
-  scroll-snap-align: start;             /* Define scroll snap behavior */
+.page-7-button {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: #004116;
 }
 
-
-
-.section:nth-child(odd) {
-  background-color: #fbfbfb;     /* Set background color for odd-numbered sections */
-}
-
-
-.section:nth-child(even) {
-  background-color: #e0e0e0;     /* Set background color for even-numbered sections */
-}
-
-
-
-/*------------------------------------------------------------  Defining Countdown Style ---------------------------------------------------------------------------*/
-
-
-.countdown-container {
-  text-align: left;                             /* Align text to the left */
-  position: absolute;                           /* Allows precise positioning */
-  left: 600px;                                  /* Adjust left position */
-  top: 320px;                                   /* Adjust top position */
-  padding-left: 40px;                           /* Add left padding */
-  font-family: 'Poppins';                       /* Specify font family */
-  animation: slideInFromRight 3.0s ease-out;    /* Apply animation for sliding in from right */
-}
-
-
-.countdown-item {
-  display: inline-block;               /* Display items inline-block */
-  margin: 15px 10px;                   /* Set margins */
-  font-size: 90px;                     /* Set font size */
-  color: #000000;                    /* Set text color */
-}
-
-
-
-/*---------------------------------------------------------------------- Defining Animations --------------------------------------------------------------------- */
-
-
-@keyframes slideInFromLeft {
-  0% {
-    transform: translateX(-100%);      /* Move element 100% to the left */
-    opacity: 0;                        /* Set opacity to 0 */
-  }
-  100% { 
-    transform: translateX(0);        /* Reset horizontal translation */
-    opacity: 1;                      /* Set opacity to 1 */
-  }
-}
-
-
-
-@keyframes slideInFromRight {
-  0% {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes pulsate {
-  0% {
-    transform: scale(0.95);
-  }
-  100% {
-    transform: scale(1.05);
-  }
+/* Page 6 - Places Gallery */
+.title6 {
+  font-size: 2rem;
+  margin-bottom: 20px;
 }
 
 .places-gallery {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  padding: 30px 40px;
-  text-align: center;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  width: 100%;
+  max-width: 1000px;
+  margin-bottom: 30px;
 }
 
 .place-card {
-  background-color: #f9f9f9;
-  border-radius: 8px;
+  background: white;
   padding: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  text-align: center;
 }
 
 .place-card img {
   width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 6px;
+  height: auto;
+  border-radius: 10px;
 }
 
 .place-card p {
-  margin-top: 8px;
-  font-weight: 600;
-  color: #333;
-  font-size: 16px;
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 1rem;
 }
 
-@media screen and (max-width: 900px) {
-  .places-gallery {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .places-gallery {
-    grid-template-columns: 1fr;
-  }
-}
-
-
-
-
-@keyframes fadeInAndScale {
-  0% {
-    opacity: 0;
-
-  }
-  100% {
-    opacity: 1;
-
-  }
-}
-
-@keyframes slideInFromTop {
-  0% {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slideInFromBottom {
-  0% {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-html {
-  scroll-behavior:smooth;              /* Set smooth scrolling behavior for the entire document */
-}
-
-
-/*------------------------------------------------------------  End of CSS Style Sheet ---------------------------------------------------------------------------*/
-
-
-/*---------------------------- Responsive Design for Tablets ----------------------------*/
-@media screen and (max-width: 1024px) {
-  body {
-    font-size: 90%;
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .title {
+    font-size: 6vw;
   }
 
-  .custom-table {
-    left: 20px;
-    width: 95%;
+  .introduction {
+    font-size: 3.5vw;
   }
 
-  .countdown-container {
-    left: 100px;
-    top: 280px;
-  }
-
-  .title, .title2, .title3, .title4, .title5, .title6, .title7, .title8, .title9 {
-    font-size: 80%;
-    width: 90%;
-    left: 20px;
-    right: 20px;
-  }
-
-  .button, .YTbutton, .FBbutton, .IGbutton, .TWbutton {
-    padding: 12px 30px;
-    font-size: 14px;
-  }
-}
-
-/*---------------------------- Responsive Design for Mobile Phones ----------------------------*/
-@media screen and (max-width: 768px) {
-  .rounded-image-1,
-  .rounded-image-2,
-  .rounded-image-3,
-  .rounded-image-4,
-  .rounded-image-5,
-  .rounded-image-6,
-  .rounded-image-7,
-  .rounded-image-9,
-  .rounded-image-10,
-  .rounded-image-11 {
-    width: 90%;
-    left: 5%;
-    right: 5%;
-    position: static;
-    margin: 20px auto;
-  }
-
-  .description-1,
-  .description-2,
-  .description-3,
-  .title-sub-1-page-2,
-  .title-sub-2-page-2,
-  .title-sub-3-page-2 {
-    position: static;
-    width: 90%;
-    margin: 10px auto;
-    text-align: center;
-  }
-
-  .page-1-button,
-  .page-2-button,
-  .page-3-button,
-  .page-3-button-1,
-  .page-4-button,
-  .page-5-button,
-  .page-6-button-back,
-  .page-6-button-8,
-  .page-7-button,
-  .page-7-home-button,
-  .main-page-button,
-  .main-page-button-2 {
-    position: static;
-    display: block;
-    width: 90%;
-    margin: 20px auto;
-    font-size: 18px;
-    padding: 15px;
-  }
-
-  .genre-list ul,
-  .genre-list2 ul,
-  .genre-list3 ul {
-    position: static;
-    width: 90%;
-    margin: 0 auto;
-  }
-
-  .custom-table {
-    width: 100%;
-    left: 0;
-    font-size: 14px;
-  }
-
-  .countdown-item {
-    font-size: 40px;
-  }
-
-  .countdown-container {
-    position: static;
-    text-align: center;
-    padding: 0;
-  }
-
-  .introduction,
-  .introduction2 {
-    position: static;
-    width: 90%;
-    margin: 10px auto;
-    text-align: center;
-  }
-}
-
-/*---------------------------- Responsive Design for Small Phones ----------------------------*/
-@media screen and (max-width: 480px) {
-  .title, .title2, .title3, .title4, .title5, .title6, .title7, .title8, .title9 {
-    font-size: 24px;
-  }
-
-  .custom-table {
-    font-size: 12px;
-  }
-
-  .countdown-item {
-    font-size: 28px;
-  }
-
-  .button,
-  .YTbutton,
-  .FBbutton,
-  .IGbutton,
-  .TWbutton {
-    font-size: 12px;
+  .button {
+    font-size: 0.9rem;
     padding: 10px 20px;
   }
 
-  .page-1-button,
-  .page-2-button,
-  .page-3-button,
-  .page-3-button-1,
-  .page-4-button,
-  .page-5-button,
-  .page-6-button-back,
-  .page-6-button-8,
-  .page-7-button,
-  .page-7-home-button,
-  .main-page-button,
-  .main-page-button-2 {
-    font-size: 16px;
-    padding: 12px;
+  .title-sub-1-page-2 {
+    font-size: 1rem;
+  }
+
+  .custom-table th, .custom-table td {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  .videos-container {
+    flex-direction: column;
+    align-items: center;
   }
 }
 
+@media (max-width: 480px) {
+  .button-container,
+  .button-container2,
+  .button-container3 {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .title {
+    font-size: 7vw;
+  }
+
+  .button {
+    width: 80%;
+    text-align: center;
+  }
+}
