@@ -128,19 +128,22 @@
     <p id="login-error" style="color:red;"></p>
   </div>
 
+  <!-- Firebase -->
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
 
   <script>
-    // Firebase config
+    // Firebase config - replace with your actual config
     const firebaseConfig = {
-      apiKey: "YOUR_API_KEY",
-      authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-      projectId: "YOUR_PROJECT_ID",
-      storageBucket: "YOUR_PROJECT_ID.appspot.com",
-      messagingSenderId: "YOUR_SENDER_ID",
-      appId: "YOUR_APP_ID"
+      apiKey: "AIzaSyAVdVydpsY4NLqUINnI2einUIEt2WDuvV0",
+      authDomain: "kashmir-466a5.firebaseapp.com",
+      projectId: "kashmir-466a5",
+      storageBucket: "kashmir-466a5.appspot.com",
+      messagingSenderId: "197822369582",
+      appId: "1:197822369582:web:506a533089ba8f00e334bf",
+      measurementId: "G-Q8RCH8W7DZ"
     };
+
     firebase.initializeApp(firebaseConfig);
     const auth = firebase.auth();
 
@@ -161,9 +164,8 @@
           errorMsg.textContent = error.message;
         });
     });
-  </script>
 
-  <script>
+    // Always start at page 1
     window.onload = function() {
       window.location.hash = '#page1';
     };
