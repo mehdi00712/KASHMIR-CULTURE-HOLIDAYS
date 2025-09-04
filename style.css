@@ -1,344 +1,50 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: Arial, sans-serif; line-height:1.6; background:#f9f9f9; }
 
-html {
-  scroll-behavior: smooth;
-}
+/* Sections */
+.section { min-height:100vh; padding:5vh 5vw; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; }
 
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  background-color: #f9f9f9;
-}
+/* Hero */
+.hero-image { width:70%; max-height:80vh; object-fit:cover; margin-bottom:20px; border-radius:10px; }
+.title { font-size:4vw; font-family:'Dancing Script', cursive; margin-bottom:10px; }
+.introduction { font-size:2vw; font-style:italic; margin-bottom:30px; }
+.button-container { display:flex; flex-wrap:wrap; justify-content:center; gap:1rem; margin-bottom:2rem; }
+.button { background:#004116; color:#fff; padding:12px 24px; border-radius:8px; text-decoration:none; transition:0.3s; }
+.button:hover { background:#222; }
+.page-2-button { margin-top:20px; font-size:1.5rem; color:#004116; text-decoration:none; border:2px solid #000; padding:10px 20px; border-radius:10px; }
 
-/* General Section Styling */
-.section {
-  min-height: 100vh;
-  padding: 5vh 5vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
+/* About */
+.title2 { font-size:2.5rem; margin-bottom:20px; }
+.title-sub-1-page-2 { font-size:1.1rem; max-width:900px; margin-bottom:30px; padding:0 10px; }
+#page2 video { width:100%; max-width:500px; margin:10px; border-radius:12px; }
 
-/* Page 1 - Hero */
-#page1 {
-  background: none;
-}
+/* Services */
+.services-section { display:flex; flex-wrap:wrap; justify-content:center; gap:2rem; margin-bottom:20px; }
+.services-text ul { list-style:disc; padding-left:20px; font-size:1rem; }
+.videos-container video { width:100%; max-width:300px; border-radius:10px; margin:5px; }
 
-.hero-image {
-  width: 70%;
-  height: auto;
-  max-height: 80vh;
-  object-fit: cover;
-  margin-bottom: 20px;
-  border-radius: 10px;
-}
+/* Contact */
+.Celestial img { max-width:100%; height:auto; border-radius:20px; margin-bottom:20px; }
+.button-container2,.button-container3 { display:flex; justify-content:center; flex-wrap:wrap; gap:1rem; margin:10px 0; }
+.YTbutton,.IGbutton,.TWbutton { background:#004116;color:#fff;padding:10px 20px;border-radius:10px;text-decoration:none; }
+.YTbutton:hover,.IGbutton:hover,.TWbutton:hover { background:#222; }
 
+/* Table */
+.custom-table { width:100%; max-width:600px; border-collapse:collapse; margin-bottom:30px; }
+.custom-table th,.custom-table td { border:1px solid #ccc; padding:12px; text-align:center; }
+.custom-table th { background:#004116; color:#fff; }
 
-.title {
-  font-size: 4vw;
-  font-family: 'Dancing Script', cursive;
-  margin-bottom: 10px;
-}
+/* Gallery */
+.places-gallery { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem; width:100%; max-width:1000px; margin-bottom:30px; }
+.place-card { background:#fff; padding:10px; border-radius:12px; box-shadow:0 0 10px rgba(0,0,0,0.1); text-align:center; }
+.place-card img { width:100%; height:auto; border-radius:10px; }
+.place-card p { margin-top:10px; font-weight:bold; font-size:1rem; }
 
-.introduction {
-  font-size: 2vw;
-  font-style: italic;
-  margin-bottom: 30px;
-}
-
-.button-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
-
-.button {
-  background-color: #004116;
-  color: white;
-  padding: 12px 24px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-size: 1rem;
-  transition: background 0.3s ease;
-}
-
-.button:hover {
-  background-color: #333;
-}
-
-.page-2-button {
-  margin-top: 20px;
-  font-size: 1.5rem;
-  color: #004116;
-  text-decoration: none;
-  border: 2px solid #000000;
-  padding: 10px 20px;
-  border-radius: 10px;
-}
-
-/* Page 2 - About Us */
-.title2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-}
-
-.title-sub-1-page-2 {
-  font-size: 1.1rem;
-  max-width: 900px;
-  margin-bottom: 30px;
-  padding: 0 10px;
-}
-
-#page2 video {
-  width: 100%;
-  max-width: 500px;
-  margin: 10px;
-  border-radius: 12px;
-}
-
-.page-3-button,
-.page-1-button {
-  margin: 10px;
-  font-size: 2rem;
-  text-decoration: none;
-  color: #004116;
-}
-
-/* Page 3 - Services */
-.title3 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-}
-
-.services-section {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  margin-bottom: 20px;
-}
-
-.services-text ul {
-  list-style: disc;
-  padding-left: 20px;
-  font-size: 1rem;
-}
-
-.videos-container video {
-  width: 100%;
-  max-width: 300px;
-  border-radius: 10px;
-  margin: 5px;
-}
-
-.main-page-button-2,
-.page-4-button,
-.page-3-button-1 {
-  text-decoration: none;
-  font-size: 1.5rem;
-  margin: 10px;
-  color: #004116;
-}
-
-/* Page 4 - Contact */
-.title4 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
-.Celestial img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 20px;
-  margin-bottom: 20px;
-}
-
-.button-container2, .button-container3 {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin: 10px 0;
-}
-
-.YTbutton, .IGbutton, .TWbutton {
-  background-color: #004116;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-size: 1rem;
-}
-
-.YTbutton:hover,
-.IGbutton:hover,
-.TWbutton:hover {
-  background-color: #222;
-}
-
-.page-4-button-back,
-.page-5-button {
-  text-decoration: none;
-  margin: 10px;
-  font-size: 1.5rem;
-  color: #004116;
-}
-
-/* Page 5 - Business Hours */
-.title5 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
-.custom-table {
-  width: 100%;
-  max-width: 600px;
-  border-collapse: collapse;
-  margin-bottom: 30px;
-}
-
-.custom-table th,
-.custom-table td {
-  border: 1px solid #ccc;
-  padding: 12px;
-  text-align: center;
-}
-
-.custom-table th {
-  background-color: #004116;
-  color: white;
-}
-
-.page-7-button {
-  font-size: 1.5rem;
-  text-decoration: none;
-  color: #004116;
-}
-
-/* Page 6 - Places Gallery */
-.title6 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
-.places-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
-  width: 100%;
-  max-width: 1000px;
-  margin-bottom: 30px;
-}
-
-.place-card {
-  background: white;
-  padding: 10px;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  text-align: center;
-}
-
-.place-card img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-}
-
-.place-card p {
-  margin-top: 10px;
-  font-weight: bold;
-  font-size: 1rem;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .title {
-    font-size: 6vw;
-  }
-
-  .introduction {
-    font-size: 3.5vw;
-  }
-
-  .button {
-    font-size: 0.9rem;
-    padding: 10px 20px;
-  }
-
-  .title-sub-1-page-2 {
-    font-size: 1rem;
-  }
-
-  .custom-table th, .custom-table td {
-    font-size: 0.9rem;
-    padding: 10px;
-  }
-
-  .videos-container {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .button-container,
-  .button-container2,
-  .button-container3 {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .title {
-    font-size: 7vw;
-  }
-
-  .button {
-    width: 80%;
-    text-align: center;
-  }
-}
-
-#login-section input {
-  padding: 10px;
-  margin: 5px 0;
-  width: 250px;
-  max-width: 90%;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-}
-
-#login-section button {
-  padding: 10px 20px;
-  margin-top: 10px;
-  border: none;
-  border-radius: 8px;
-  background-color: #004116;
-  color: white;
-  cursor: pointer;
-  font-size: 1rem;
-}
-
-#login-section button:hover {
-  background-color: #222;
-}
-
-#admin-content input, #admin-content textarea {
-  display: block;
-  margin: 10px 0;
-  padding: 8px;
-  width: 300px;
-}
-button { padding: 8px 16px; margin:5px; cursor:pointer; }
-
-
-
+/* Admin */
+.admin-container { max-width:800px; margin:20px auto; padding:20px; background:#f0f0f0; border-radius:15px; }
+.admin-container input, .admin-container textarea { width:100%; margin:5px 0; padding:10px; border-radius:8px; border:1px solid #ccc; }
+.admin-container button { padding:10px 20px; border:none; background:#004116; color:#fff; border-radius:8px; cursor:pointer; }
+.admin-container button:hover { background:#222; }
