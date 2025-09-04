@@ -307,3 +307,28 @@ body {
     text-align: center;
   }
 }
+
+#login-section input {
+  padding: 10px;
+  margin: 5px 0;
+  width: 250px;
+  max-width: 90%;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+#login-section button {
+  padding: 10px 20px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: #004116;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+#login-section button:hover {
+  background-color: #222;
+}
+
