@@ -1,175 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>KASHMIR CULTURE HOLIDAYS</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>KASHMIR CULTURE HOLIDAYS</title>
+<link rel="stylesheet" href="style.css" />
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-  <!-- Page 1 - Hero -->
-  <div id="page1" class="section">
-    <img src="1.jpg" alt="Hero Image" class="hero-image">
-    <h1 class="title">Welcome to Kashmir Culture Holidays</h1>
-    <p class="introduction">Explore the hidden beauty of Kashmir</p>
+<!-- Page 1 - Hero -->
+<div id="page1" class="section">
+  <img src="1.jpg" alt="Hero Image" class="hero-image">
+  <h1 class="title">Loading...</h1>
+  <p class="introduction">Loading...</p>
 
-    <div class="button-container">
-      <a href="#page2" class="button">About Us</a>
-      <a href="#page3" class="button">Services</a>
-      <a href="#page6" class="button">Featured Destinations</a>
-      <a href="#page5" class="button">Business Hours</a>
-      <a href="#page4" class="button">Contact</a>
-    </div>
-
-    <a href="#page2" class="page-2-button">Explore Now</a>
+  <div class="button-container">
+    <a href="#page2" class="button">About Us</a>
+    <a href="#page3" class="button">Services</a>
+    <a href="#page6" class="button">Featured Destinations</a>
+    <a href="#page5" class="button">Business Hours</a>
+    <a href="#page4" class="button">Contact</a>
   </div>
 
-  <!-- Page 2 - About Us -->
-  <div id="page2" class="section">
-    <h1 class="title2">About us</h1>
-    <h2 class="title-sub-1-page-2">
-      Welcome to Kashmir Culture Holidays — a travel agency where every journey is a verse and every destination a memory woven in beauty...
-    </h2>
-    <video src="vid.mp4" autoplay loop muted playsinline></video>
-    <video src="vid.mp4" autoplay loop muted playsinline></video>
+  <a href="#page2" class="page-2-button">Explore Now</a>
+</div>
 
-    <a href="#page3" class="page-3-button">↬</a>
-    <a href="#page1" class="page-1-button">⏏</a>
-  </div>
+<!-- Page 2 - About Us -->
+<div id="page2" class="section">
+  <h1 class="title2">About us</h1>
+  <p class="title-sub-1-page-2" id="about-text">Loading...</p>
+</div>
 
-  <!-- Page 3 - Services -->
-  <div id="page3" class="section">
-    <h1 class="title3">Services</h1>
-    <div class="services-section">
-      <div class="services-text">
-        <ul>
-          <li>Overnight stay in Hotel</li>
-          <li>Overnight stay in Houseboat</li>
-          <li>Overnight stay in Hotel which is on Mountain</li>
-          <li>Taxi</li>
-          <li>Guide</li>
-          <li>Daily excursions</li>
-          <li>Breakfast and Dinner</li>
-          <li>Cable car ride</li>
-          <li>Boat ride</li>
-          <li><span class="small-text">Tours all over India included</span></li>
-        </ul>
-      </div>
-      <div class="videos-container">
-        <video src="vid1.mp4" autoplay loop muted playsinline></video>
-        <video src="vid2.mp4" autoplay loop muted playsinline></video>
-      </div>
-    </div>
+<!-- Page 3 - Services -->
+<div id="page3" class="section">
+  <h1 class="title3">Services</h1>
+  <ul id="services-list"></ul>
+</div>
 
-    <a href="#page1" class="main-page-button-2">Home</a>
-    <a href="#page4" class="page-4-button">↬</a>
-    <a href="#page2" class="page-3-button-1">↫</a>
-  </div>
+<!-- Page 5 - Business Hours -->
+<div id="page5" class="section">
+  <h1 class="title5">Business Hours</h1>
+  <table class="custom-table" id="business-hours">
+    <tr><th>Day</th><th>Hours</th></tr>
+  </table>
+</div>
 
-  <!-- Page 4 - Contact -->
-  <div id="page4" class="section">
-    <h1 class="title4">Contact KASHMIR CULTURE HOLIDAYS</h1>
-    <div class="Celestial">
-      <img src="2.jpg" class="rounded-image-5" />
-    </div>
+<!-- Page 6 - Places -->
+<div id="page6" class="section">
+  <h1 class="title6">Some places you will visit</h1>
+  <div class="places-gallery" id="destinations"></div>
+</div>
 
-    <div class="button-container2">
-      <a href="http://wa.me/23058134640" class="YTbutton">WhatsApp</a>
-    </div>
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
 
-    <div class="button-container3">
-      <a href="https://www.instagram.com/kashmircultureholidays.mu" class="IGbutton">Instagram</a>
-      <a href="https://www.tiktok.com/@kashmircultureholidays" class="TWbutton">Tiktok</a>
-    </div>
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyAVdVydpsY4NLqUINnI2einUIEt2WDuvV0",
+    authDomain: "kashmir-466a5.firebaseapp.com",
+    projectId: "kashmir-466a5",
+    storageBucket: "kashmir-466a5.appspot.com",
+    messagingSenderId: "197822369582",
+    appId: "1:197822369582:web:506a533089ba8f00e334bf",
+    measurementId: "G-Q8RCH8W7DZ"
+  };
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.database();
 
-    <a href="#page1" class="page-4-button-back">⏏</a>
-    <a href="#page5" class="page-5-button">Explore</a>
-  </div>
+  // Hero Section
+  db.ref('hero').on('value', snapshot => {
+    const data = snapshot.val();
+    if(data){
+      document.querySelector('.title').textContent = data.title;
+      document.querySelector('.introduction').textContent = data.subtitle;
+      document.querySelector('.hero-image').src = data.image;
+    }
+  });
 
-  <!-- Page 5 - Business Hours -->
-  <div id="page5" class="section">
-    <h1 class="title5">Business Hours</h1>
-    <table class="custom-table">
-      <tr><th>Working Days</th><th>Working Hours</th></tr>
-      <tr><td>Monday</td><td>9:00 AM - 6:00 PM</td></tr>
-      <tr><td>Tuesday</td><td>9:00 AM - 6:00 PM</td></tr>
-      <tr><td>Wednesday</td><td>9:00 AM - 6:00 PM</td></tr>
-      <tr><td>Thursday</td><td>9:00 AM - 6:00 PM</td></tr>
-      <tr><td>Friday</td><td>9:00 AM - 6:00 PM</td></tr>
-      <tr><td>Saturday</td><td>10:00 AM - 3:00 PM</td></tr>
-      <tr><td>Sunday</td><td>10:00 AM - 3:00 PM</td></tr>
-      <tr><td>Public Holidays</td><td>9:00 AM - 12:00 PM</td></tr>
-    </table>
-    <a href="#page1" class="page-7-button">⏏</a>
-  </div>
+  // About Us
+  db.ref('about').on('value', snapshot => {
+    const data = snapshot.val();
+    if(data){
+      document.getElementById('about-text').textContent = data.text;
+    }
+  });
 
-  <!-- Page 6 - Places Gallery -->
-  <div id="page6" class="section">
-    <h1 class="title6">Some places you will visit</h1>
-    <div class="places-gallery">
-      <div class="place-card"><img src="3.webp" alt="Gulmarg"><p>Gulmarg</p></div>
-      <div class="place-card"><img src="4.jpg" alt="Srinagar"><p>Srinagar</p></div>
-      <div class="place-card"><img src="5.jpeg" alt="Doodhpathri"><p>Doodhpathri</p></div>
-      <div class="place-card"><img src="7.jpeg" alt="Pahalgam"><p>Pahalgam</p></div>
-      <div class="place-card"><img src="6.jpg" alt="Sonamarg"><p>Sonamarg</p></div>
-      <div class="place-card"><img src="8.jpg" alt="Thajwas Glaciers"><p>Thajiwas Glaciers</p></div>
-    </div>
-    <a href="#page1" class="page-4-button-back">⏏</a>
-  </div>
-
-  <!-- Login Section -->
-  <div id="login-section" class="section">
-    <h2>Login</h2>
-    <input type="email" id="login-email" placeholder="Email" />
-    <input type="password" id="login-password" placeholder="Password" />
-    <button id="login-btn">Login</button>
-    <p id="login-error" style="color:red;"></p>
-  </div>
-
-  <!-- Firebase -->
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
-
-  <script>
-    // Firebase config - replace with your actual config
-    const firebaseConfig = {
-      apiKey: "AIzaSyAVdVydpsY4NLqUINnI2einUIEt2WDuvV0",
-      authDomain: "kashmir-466a5.firebaseapp.com",
-      projectId: "kashmir-466a5",
-      storageBucket: "kashmir-466a5.appspot.com",
-      messagingSenderId: "197822369582",
-      appId: "1:197822369582:web:506a533089ba8f00e334bf",
-      measurementId: "G-Q8RCH8W7DZ"
-    };
-
-    firebase.initializeApp(firebaseConfig);
-    const auth = firebase.auth();
-
-    // Login handler
-    document.getElementById('login-btn').addEventListener('click', () => {
-      const email = document.getElementById('login-email').value;
-      const password = document.getElementById('login-password').value;
-      const errorMsg = document.getElementById('login-error');
-
-      auth.signInWithEmailAndPassword(email, password)
-        .then(userCredential => {
-          errorMsg.style.color = 'green';
-          errorMsg.textContent = "Login successful!";
-          window.location.href = 'admin.html';
-        })
-        .catch(error => {
-          errorMsg.style.color = 'red';
-          errorMsg.textContent = error.message;
-        });
+  // Services
+  db.ref('services').on('value', snapshot => {
+    const services = snapshot.val() || [];
+    const servicesList = document.getElementById('services-list');
+    servicesList.innerHTML = '';
+    services.forEach(s => {
+      const li = document.createElement('li');
+      li.textContent = s;
+      servicesList.appendChild(li);
     });
+  });
 
-    // Always start at page 1
-    window.onload = function() {
-      window.location.hash = '#page1';
-    };
-  </script>
+  // Destinations
+  db.ref('destinations').on('value', snapshot => {
+    const destinations = snapshot.val() || [];
+    const destDiv = document.getElementById('destinations');
+    destDiv.innerHTML = '';
+    destinations.forEach(d => {
+      const div = document.createElement('div');
+      div.classList.add('place-card');
+      div.innerHTML = `<img src="${d.image}" alt="${d.name}"><p>${d.name}</p>`;
+      destDiv.appendChild(div);
+    });
+  });
 
+  // Business Hours
+  db.ref('businessHours').on('value', snapshot => {
+    const hours = snapshot.val() || {};
+    const table = document.getElementById('business-hours');
+    table.innerHTML = "<tr><th>Day</th><th>Hours</th></tr>";
+    Object.keys(hours).forEach(day=>{
+      const tr = document.createElement('tr');
+      tr.innerHTML = `<td>${day}</td><td>${hours[day]}</td>`;
+      table.appendChild(tr);
+    });
+  });
+</script>
 </body>
 </html>
