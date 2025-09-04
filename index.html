@@ -1,161 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>KASHMIR CULTURE HOLIDAYS</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>KASHMIR CULTURE HOLIDAYS</title>
+<link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Hero Section -->
-  <div id="page1" class="section">
-    <img id="hero-image" src="1.jpg" alt="Hero Image" class="hero-image">
-    <h1 id="hero-title" class="title">Loading...</h1>
-    <p id="hero-intro" class="introduction">Loading...</p>
+<!-- LOGIN / EDITOR -->
+<div id="login-editor-section" class="section">
+  <h2>Admin Login</h2>
+  <input type="email" id="login-email" placeholder="Email" />
+  <input type="password" id="login-password" placeholder="Password" />
+  <button id="login-btn">Login</button>
+  <p id="login-error" style="color:red;"></p>
 
-    <div class="button-container">
-      <a href="#page2" class="button">About Us</a>
-      <a href="#page3" class="button">Services</a>
-      <a href="#page6" class="button">Featured Destinations</a>
-      <a href="#page5" class="button">Business Hours</a>
-      <a href="#page4" class="button">Contact</a>
-    </div>
-
-    <a href="#page2" class="page-2-button">Explore Now</a>
+  <div id="editor" style="display:none; margin-top:20px;">
+    <h2>Edit Content</h2>
+    <input type="text" id="hero-title-input" placeholder="Hero Title" />
+    <input type="text" id="hero-intro-input" placeholder="Hero Intro" />
+    <input type="text" id="hero-image-input" placeholder="Hero Image URL" />
+    <button id="save-btn">Save Changes</button>
+    <p id="save-msg" style="color:green;"></p>
   </div>
+</div>
 
-  <!-- About Us -->
-  <div id="page2" class="section">
-    <h1 id="about-title" class="title2">Loading...</h1>
-    <h2 id="about-text" class="title-sub-1-page-2">Loading...</h2>
-    <video id="about-video1" autoplay loop muted playsinline></video>
-    <video id="about-video2" autoplay loop muted playsinline></video>
+<!-- HERO -->
+<div id="page1" class="section">
+  <img id="hero-image" src="1.jpg" alt="Hero" class="hero-image">
+  <h1 id="hero-title" class="title">Welcome to Kashmir Culture Holidays</h1>
+  <p id="hero-intro" class="introduction">Explore the hidden beauty of Kashmir</p>
+</div>
 
-    <a href="#page3" class="page-3-button">↬</a>
-    <a href="#page1" class="page-1-button">⏏</a>
-  </div>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
 
-  <!-- Services -->
-  <div id="page3" class="section">
-    <h1 class="title3">Services</h1>
-    <div class="services-section">
-      <div id="services-list" class="services-text">Loading...</div>
-      <div class="videos-container">
-        <video id="service-video1" autoplay loop muted playsinline></video>
-        <video id="service-video2" autoplay loop muted playsinline></video>
-      </div>
-    </div>
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyAVdVydpsY4NLqUINnI2einUIEt2WDuvV0",
+    authDomain: "kashmir-466a5.firebaseapp.com",
+    projectId: "kashmir-466a5",
+    storageBucket: "kashmir-466a5.appspot.com",
+    messagingSenderId: "197822369582",
+    appId: "1:197822369582:web:506a533089ba8f00e334bf"
+  };
+  firebase.initializeApp(firebaseConfig);
 
-    <a href="#page1" class="main-page-button-2">Home</a>
-    <a href="#page4" class="page-4-button">↬</a>
-    <a href="#page2" class="page-3-button-1">↫</a>
-  </div>
+  const auth = firebase.auth();
+  const db = firebase.database();
 
-  <!-- Contact -->
-  <div id="page4" class="section">
-    <h1 class="title4">Contact KASHMIR CULTURE HOLIDAYS</h1>
-    <div class="Celestial">
-      <img id="contact-image" src="2.jpg" class="rounded-image-5" />
-    </div>
+  const loginBtn = document.getElementById('login-btn');
+  const emailInput = document.getElementById('login-email');
+  const passwordInput = document.getElementById('login-password');
+  const loginError = document.getElementById('login-error');
+  const editor = document.getElementById('editor');
 
-    <div class="button-container2">
-      <a id="whatsapp-link" href="#" class="YTbutton">WhatsApp</a>
-    </div>
+  loginBtn.addEventListener('click', () => {
+    auth.signInWithEmailAndPassword(emailInput.value, passwordInput.value)
+      .then(() => {
+        loginError.textContent = "Login successful!";
+        editor.style.display = 'block';
+        loadHeroContent();
+      })
+      .catch(err => loginError.textContent = err.message);
+  });
 
-    <div class="button-container3">
-      <a id="instagram-link" href="#" class="IGbutton">Instagram</a>
-      <a id="tiktok-link" href="#" class="TWbutton">Tiktok</a>
-    </div>
+  function loadHeroContent() {
+    db.ref('hero').once('value').then(snapshot => {
+      const data = snapshot.val();
+      document.getElementById('hero-title-input').value = data.title || '';
+      document.getElementById('hero-intro-input').value = data.intro || '';
+      document.getElementById('hero-image-input').value = data.image || '';
 
-    <a href="#page1" class="page-4-button-back">⏏</a>
-    <a href="#page5" class="page-5-button">Explore</a>
-  </div>
+      // Show content for users
+      document.getElementById('hero-title').textContent = data.title || '';
+      document.getElementById('hero-intro').textContent = data.intro || '';
+      document.getElementById('hero-image').src = data.image || '';
+    });
+  }
 
-  <!-- Business Hours -->
-  <div id="page5" class="section">
-    <h1 class="title5">Business Hours</h1>
-    <table id="business-hours" class="custom-table">Loading...</table>
-    <a href="#page1" class="page-7-button">⏏</a>
-  </div>
-
-  <!-- Places Gallery -->
-  <div id="page6" class="section">
-    <h1 class="title6">Some places you will visit</h1>
-    <div id="places-gallery" class="places-gallery">Loading...</div>
-    <a href="#page1" class="page-4-button-back">⏏</a>
-  </div>
-
-  <!-- Firebase -->
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
-
-  <script>
-    const firebaseConfig = {
-      apiKey: "AIzaSyAVdVydpsY4NLqUINnI2einUIEt2WDuvV0",
-      authDomain: "kashmir-466a5.firebaseapp.com",
-      projectId: "kashmir-466a5",
-      storageBucket: "kashmir-466a5.appspot.com",
-      messagingSenderId: "197822369582",
-      appId: "1:197822369582:web:506a533089ba8f00e334bf",
-      measurementId: "G-Q8RCH8W7DZ"
+  document.getElementById('save-btn').addEventListener('click', () => {
+    const hero = {
+      title: document.getElementById('hero-title-input').value,
+      intro: document.getElementById('hero-intro-input').value,
+      image: document.getElementById('hero-image-input').value
     };
-    firebase.initializeApp(firebaseConfig);
-    const db = firebase.database();
-
-    function loadContent() {
-      // Hero
-      db.ref('hero').once('value').then(snap => {
-        const data = snap.val();
-        document.getElementById('hero-title').textContent = data.title;
-        document.getElementById('hero-intro').textContent = data.intro;
-        document.getElementById('hero-image').src = data.image;
+    db.ref('hero').set(hero)
+      .then(() => {
+        document.getElementById('save-msg').textContent = "Hero content updated!";
+        loadHeroContent();
       });
+  });
 
-      // About
-      db.ref('about').once('value').then(snap => {
-        const data = snap.val();
-        document.getElementById('about-title').textContent = data.title;
-        document.getElementById('about-text').textContent = data.text;
-        document.getElementById('about-video1').src = data.video1;
-        document.getElementById('about-video2').src = data.video2;
-      });
+  // Load hero content on page load
+  loadHeroContent();
+</script>
 
-      // Services
-      db.ref('services').once('value').then(snap => {
-        const data = snap.val();
-        document.getElementById('services-list').innerHTML = "<ul>" + data.items.map(i => `<li>${i}</li>`).join('') + "</ul>";
-        document.getElementById('service-video1').src = data.video1;
-        document.getElementById('service-video2').src = data.video2;
-      });
-
-      // Contact
-      db.ref('contact').once('value').then(snap => {
-        const data = snap.val();
-        document.getElementById('whatsapp-link').href = data.whatsapp;
-        document.getElementById('instagram-link').href = data.instagram;
-        document.getElementById('tiktok-link').href = data.tiktok;
-        document.getElementById('contact-image').src = data.image;
-      });
-
-      // Business Hours
-      db.ref('hours').once('value').then(snap => {
-        const data = snap.val();
-        let html = "<tr><th>Day</th><th>Hours</th></tr>";
-        for (let day in data) html += `<tr><td>${day}</td><td>${data[day]}</td></tr>`;
-        document.getElementById('business-hours').innerHTML = html;
-      });
-
-      // Places Gallery
-      db.ref('places').once('value').then(snap => {
-        const data = snap.val();
-        document.getElementById('places-gallery').innerHTML = data.map(p => 
-          `<div class="place-card"><img src="${p.image}" alt="${p.name}"><p>${p.name}</p></div>`).join('');
-      });
-    }
-
-    window.onload = loadContent;
-  </script>
 </body>
 </html>
