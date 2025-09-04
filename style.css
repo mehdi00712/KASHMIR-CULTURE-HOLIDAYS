@@ -332,3 +332,13 @@ body {
   background-color: #222;
 }
 
+#admin-content input, #admin-content textarea {
+  display: block;
+  margin: 10px 0;
+  padding: 8px;
+  width: 300px;
+}
+button { padding: 8px 16px; margin:5px; cursor:pointer; }
+
+
+
