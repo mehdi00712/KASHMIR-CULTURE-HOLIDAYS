@@ -9,11 +9,11 @@
 </head>
 <body>
 
-  <!-- Page 1: Hero -->
+  <!-- Page 1 - Hero -->
   <div id="page1" class="section">
-    <img id="hero-image" src="1.jpg" alt="Hero Image" class="hero-image">
-    <h1 id="title" class="title">Welcome to Kashmir Culture Holidays</h1>
-    <p id="introduction" class="introduction">Explore the hidden beauty of Kashmir</p>
+    <img src="1.jpg" alt="Hero Image" class="hero-image">
+    <h1 class="title">Welcome to Kashmir Culture Holidays</h1>
+    <p class="introduction">Explore the hidden beauty of Kashmir</p>
 
     <div class="button-container">
       <a href="#page2" class="button">About Us</a>
@@ -26,22 +26,24 @@
     <a href="#page2" class="page-2-button">Explore Now</a>
   </div>
 
-  <!-- Page 2: About Us -->
+  <!-- Page 2 - About Us -->
   <div id="page2" class="section">
-    <h1 id="about-title" class="title2">About us</h1>
-    <h2 id="about-text" class="title-sub-1-page-2">Loading content...</h2>
-    <video id="about-video1" src="vid.mp4" autoplay loop muted playsinline></video>
-    <video id="about-video2" src="vid.mp4" autoplay loop muted playsinline></video>
+    <h1 class="title2">About us</h1>
+    <h2 class="title-sub-1-page-2">
+      Welcome to Kashmir Culture Holidays — a travel agency where every journey is a verse and every destination a memory woven in beauty...
+    </h2>
+    <video src="vid.mp4" autoplay loop muted playsinline></video>
+    <video src="vid.mp4" autoplay loop muted playsinline></video>
 
     <a href="#page3" class="page-3-button">↬</a>
     <a href="#page1" class="page-1-button">⏏</a>
   </div>
 
-  <!-- Page 3: Services -->
+  <!-- Page 3 - Services -->
   <div id="page3" class="section">
     <h1 class="title3">Services</h1>
     <div class="services-section">
-      <div class="services-text" id="services-list">
+      <div class="services-text">
         <ul>
           <li>Overnight stay in Hotel</li>
           <li>Overnight stay in Houseboat</li>
@@ -56,8 +58,8 @@
         </ul>
       </div>
       <div class="videos-container">
-        <video id="service-video1" src="vid1.mp4" autoplay loop muted playsinline></video>
-        <video id="service-video2" src="vid2.mp4" autoplay loop muted playsinline></video>
+        <video src="vid1.mp4" autoplay loop muted playsinline></video>
+        <video src="vid2.mp4" autoplay loop muted playsinline></video>
       </div>
     </div>
 
@@ -66,30 +68,30 @@
     <a href="#page2" class="page-3-button-1">↫</a>
   </div>
 
-  <!-- Page 4: Contact -->
+  <!-- Page 4 - Contact -->
   <div id="page4" class="section">
-    <h1 id="contact-title" class="title4">Contact KASHMIR CULTURE HOLIDAYS</h1>
+    <h1 class="title4">Contact KASHMIR CULTURE HOLIDAYS</h1>
     <div class="Celestial">
-      <img id="contact-image" src="2.jpg" class="rounded-image-5" />
+      <img src="2.jpg" class="rounded-image-5" />
     </div>
 
     <div class="button-container2">
-      <a id="whatsapp-link" href="http://wa.me/23058134640" class="YTbutton">WhatsApp</a>
+      <a href="http://wa.me/23058134640" class="YTbutton">WhatsApp</a>
     </div>
 
     <div class="button-container3">
-      <a id="instagram-link" href="#" class="IGbutton">Instagram</a>
-      <a id="tiktok-link" href="#" class="TWbutton">Tiktok</a>
+      <a href="https://www.instagram.com/kashmircultureholidays.mu" class="IGbutton">Instagram</a>
+      <a href="https://www.tiktok.com/@kashmircultureholidays" class="TWbutton">Tiktok</a>
     </div>
 
     <a href="#page1" class="page-4-button-back">⏏</a>
     <a href="#page5" class="page-5-button">Explore</a>
   </div>
 
-  <!-- Page 5: Business Hours -->
+  <!-- Page 5 - Business Hours -->
   <div id="page5" class="section">
     <h1 class="title5">Business Hours</h1>
-    <table id="business-hours" class="custom-table">
+    <table class="custom-table">
       <tr><th>Working Days</th><th>Working Hours</th></tr>
       <tr><td>Monday</td><td>9:00 AM - 6:00 PM</td></tr>
       <tr><td>Tuesday</td><td>9:00 AM - 6:00 PM</td></tr>
@@ -103,18 +105,64 @@
     <a href="#page1" class="page-7-button">⏏</a>
   </div>
 
-  <!-- Page 6: Featured Destinations -->
+  <!-- Page 6 - Places Gallery -->
   <div id="page6" class="section">
     <h1 class="title6">Some places you will visit</h1>
-    <div class="places-gallery" id="places-gallery">
-      <!-- Each place can also be updated dynamically via Firebase -->
+    <div class="places-gallery">
+      <div class="place-card"><img src="3.webp" alt="Gulmarg"><p>Gulmarg</p></div>
+      <div class="place-card"><img src="4.jpg" alt="Srinagar"><p>Srinagar</p></div>
+      <div class="place-card"><img src="5.jpeg" alt="Doodhpathri"><p>Doodhpathri</p></div>
+      <div class="place-card"><img src="7.jpeg" alt="Pahalgam"><p>Pahalgam</p></div>
+      <div class="place-card"><img src="6.jpg" alt="Sonamarg"><p>Sonamarg</p></div>
+      <div class="place-card"><img src="8.jpg" alt="Thajwas Glaciers"><p>Thajiwas Glaciers</p></div>
     </div>
-
     <a href="#page1" class="page-4-button-back">⏏</a>
   </div>
 
-  <!-- Firebase & Custom Script -->
-  <script type="module" src="script.js"></script>
+  <!-- Login Section -->
+  <div id="login-section" class="section">
+    <h2>Login</h2>
+    <input type="email" id="login-email" placeholder="Email" />
+    <input type="password" id="login-password" placeholder="Password" />
+    <button id="login-btn">Login</button>
+    <p id="login-error" style="color:red;"></p>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+
+  <script>
+    // Firebase config
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+      projectId: "YOUR_PROJECT_ID",
+      storageBucket: "YOUR_PROJECT_ID.appspot.com",
+      messagingSenderId: "YOUR_SENDER_ID",
+      appId: "YOUR_APP_ID"
+    };
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+
+    // Login handler
+    document.getElementById('login-btn').addEventListener('click', () => {
+      const email = document.getElementById('login-email').value;
+      const password = document.getElementById('login-password').value;
+      const errorMsg = document.getElementById('login-error');
+
+      auth.signInWithEmailAndPassword(email, password)
+        .then(userCredential => {
+          errorMsg.style.color = 'green';
+          errorMsg.textContent = "Login successful!";
+          window.location.href = 'admin.html';
+        })
+        .catch(error => {
+          errorMsg.style.color = 'red';
+          errorMsg.textContent = error.message;
+        });
+    });
+  </script>
+
   <script>
     window.onload = function() {
       window.location.hash = '#page1';
