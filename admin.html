@@ -1,129 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Admin Panel - Kashmir Culture Holidays</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Panel - Kashmir Culture Holidays</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<h1>Admin Panel</h1>
 
-<!-- Login -->
-<div id="login-section">
-  <h2>Login</h2>
-  <input type="email" id="login-email" placeholder="Email">
-  <input type="password" id="login-password" placeholder="Password">
-  <button id="login-btn">Login</button>
-  <p id="login-error" style="color:red;"></p>
-</div>
+  <div class="admin-container">
+    <h1>Admin Panel</h1>
 
-<!-- Admin Content -->
-<div id="admin-content" style="display:none;">
+    <div id="login-section">
+      <h2>Login</h2>
+      <input type="email" id="admin-email" placeholder="Email" />
+      <input type="password" id="admin-password" placeholder="Password" />
+      <button id="admin-login-btn">Login</button>
+      <p id="login-error" style="color:red;"></p>
+    </div>
 
-  <h2>Hero Section</h2>
-  <input type="text" id="hero-title" placeholder="Title"><br>
-  <input type="text" id="hero-subtitle" placeholder="Subtitle"><br>
-  <input type="text" id="hero-image" placeholder="Image URL"><br>
-  <button id="update-hero">Update Hero</button>
+    <div id="editor-section" style="display:none;">
+      <h2>Edit Website Content</h2>
 
-  <h2>About Us</h2>
-  <textarea id="about-text" placeholder="About text"></textarea><br>
-  <button id="update-about">Update About</button>
+      <h3>Hero Section</h3>
+      <input type="text" id="hero-title-input" placeholder="Hero Title" />
+      <input type="text" id="hero-intro-input" placeholder="Hero Intro" />
+      <input type="text" id="hero-image-input" placeholder="Hero Image URL" />
 
-  <h2>Services</h2>
-  <textarea id="services-text" placeholder="One service per line"></textarea><br>
-  <button id="update-services">Update Services</button>
+      <h3>About Section</h3>
+      <input type="text" id="about-title-input" placeholder="About Title" />
+      <textarea id="about-text-input" placeholder="About Text"></textarea>
+      <input type="text" id="about-video1-input" placeholder="Video 1 URL" />
+      <input type="text" id="about-video2-input" placeholder="Video 2 URL" />
 
-  <h2>Destinations</h2>
-  <textarea id="destinations-text" placeholder='Format: Name,ImageURL'></textarea><br>
-  <button id="update-destinations">Update Destinations</button>
+      <h3>Services</h3>
+      <textarea id="services-items-input" placeholder="Services, separated by commas"></textarea>
+      <input type="text" id="services-video1-input" placeholder="Video 1 URL" />
+      <input type="text" id="services-video2-input" placeholder="Video 2 URL" />
 
-  <h2>Business Hours</h2>
-  <textarea id="hours-text" placeholder='Format: Day,Hours'></textarea><br>
-  <button id="update-hours">Update Business Hours</button>
-</div>
+      <h3>Contact</h3>
+      <input type="text" id="contact-image-input" placeholder="Contact Image URL" />
+      <input type="text" id="contact-whatsapp-input" placeholder="WhatsApp URL" />
+      <input type="text" id="contact-instagram-input" placeholder="Instagram URL" />
+      <input type="text" id="contact-tiktok-input" placeholder="Tiktok URL" />
 
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+      <h3>Business Hours</h3>
+      <textarea id="hours-input" placeholder='JSON format, e.g. {"Monday":"9-6","Tuesday":"9-6"}'></textarea>
 
-<script>
-const firebaseConfig = {
-    apiKey: "AIzaSyAVdVydpsY4NLqUINnI2einUIEt2WDuvV0",
-    authDomain: "kashmir-466a5.firebaseapp.com",
-    projectId: "kashmir-466a5",
-    storageBucket: "kashmir-466a5.appspot.com",
-    messagingSenderId: "197822369582",
-    appId: "1:197822369582:web:506a533089ba8f00e334bf",
-    measurementId: "G-Q8RCH8W7DZ"
-};
-firebase.initializeApp(firebaseConfig);
-const auth = firebase.auth();
-const db = firebase.database();
+      <h3>Places Gallery</h3>
+      <textarea id="places-input" placeholder='JSON array, e.g. [{"name":"Gulmarg","image":"url"},{"name":"Srinagar","image":"url"}]'></textarea>
 
-// Login
-document.getElementById('login-btn').addEventListener('click', () => {
-  const email = document.getElementById('login-email').value;
-  const password = document.getElementById('login-password').value;
-  const errorMsg = document.getElementById('login-error');
+      <button id="save-btn">Save Changes</button>
+      <p id="save-msg" style="color:green;"></p>
+    </div>
+  </div>
 
-  auth.signInWithEmailAndPassword(email, password)
-    .then(() => {
-      document.getElementById('login-section').style.display = 'none';
-      document.getElementById('admin-content').style.display = 'block';
-      errorMsg.textContent = '';
-    })
-    .catch(err => { errorMsg.textContent = err.message; });
-});
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
 
-// Update Hero
-document.getElementById('update-hero').addEventListener('click', ()=>{
-  db.ref('hero').set({
-    title: document.getElementById('hero-title').value,
-    subtitle: document.getElementById('hero-subtitle').value,
-    image: document.getElementById('hero-image').value
-  });
-  alert('Hero updated!');
-});
+  <script>
+    // Firebase config
+    const firebaseConfig = {
+      apiKey: "AIzaSyAVdVydpsY4NLqUINnI2einUIEt2WDuvV0",
+      authDomain: "kashmir-466a5.firebaseapp.com",
+      projectId: "kashmir-466a5",
+      storageBucket: "kashmir-466a5.appspot.com",
+      messagingSenderId: "197822369582",
+      appId: "1:197822369582:web:506a533089ba8f00e334bf",
+      measurementId: "G-Q8RCH8W7DZ"
+    };
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+    const db = firebase.database();
 
-// Update About
-document.getElementById('update-about').addEventListener('click', ()=>{
-  db.ref('about').set({
-    text: document.getElementById('about-text').value
-  });
-  alert('About Us updated!');
-});
+    const loginSection = document.getElementById('login-section');
+    const editorSection = document.getElementById('editor-section');
+    const loginError = document.getElementById('login-error');
 
-// Update Services
-document.getElementById('update-services').addEventListener('click', ()=>{
-  const services = document.getElementById('services-text').value.split('\n').filter(s=>s.trim()!=='');
-  db.ref('services').set(services);
-  alert('Services updated!');
-});
+    document.getElementById('admin-login-btn').addEventListener('click', () => {
+      const email = document.getElementById('admin-email').value;
+      const password = document.getElementById('admin-password').value;
 
-// Update Destinations
-document.getElementById('update-destinations').addEventListener('click', ()=>{
-  const lines = document.getElementById('destinations-text').value.split('\n').filter(l=>l.trim()!=='');
-  const destinations = lines.map(l=>{
-    const [name,image] = l.split(',');
-    return {name:name.trim(), image:image?image.trim():'default.jpg'};
-  });
-  db.ref('destinations').set(destinations);
-  alert('Destinations updated!');
-});
+      auth.signInWithEmailAndPassword(email, password)
+        .then(() => {
+          loginSection.style.display = 'none';
+          editorSection.style.display = 'block';
+          loadCurrentContent();
+        })
+        .catch(err => loginError.textContent = err.message);
+    });
 
-// Update Business Hours
-document.getElementById('update-hours').addEventListener('click', ()=>{
-  const lines = document.getElementById('hours-text').value.split('\n').filter(l=>l.trim()!=='');
-  const hours = {};
-  lines.forEach(l=>{
-    const [day, time] = l.split(',');
-    if(day && time) hours[day.trim()] = time.trim();
-  });
-  db.ref('businessHours').set(hours);
-  alert('Business hours updated!');
-});
-</script>
+    function loadCurrentContent() {
+      db.ref().once('value').then(snapshot => {
+        const data = snapshot.val();
+
+        if(data.hero) {
+          document.getElementById('hero-title-input').value = data.hero.title || '';
+          document.getElementById('hero-intro-input').value = data.hero.intro || '';
+          document.getElementById('hero-image-input').value = data.hero.image || '';
+        }
+
+        if(data.about) {
+          document.getElementById('about-title-input').value = data.about.title || '';
+          document.getElementById('about-text-input').value = data.about.text || '';
+          document.getElementById('about-video1-input').value = data.about.video1 || '';
+          document.getElementById('about-video2-input').value = data.about.video2 || '';
+        }
+
+        if(data.services) {
+          document.getElementById('services-items-input').value = (data.services.items || []).join(',');
+          document.getElementById('services-video1-input').value = data.services.video1 || '';
+          document.getElementById('services-video2-input').value = data.services.video2 || '';
+        }
+
+        if(data.contact) {
+          document.getElementById('contact-image-input').value = data.contact.image || '';
+          document.getElementById('contact-whatsapp-input').value = data.contact.whatsapp || '';
+          document.getElementById('contact-instagram-input').value = data.contact.instagram || '';
+          document.getElementById('contact-tiktok-input').value = data.contact.tiktok || '';
+        }
+
+        if(data.hours) {
+          document.getElementById('hours-input').value = JSON.stringify(data.hours);
+        }
+
+        if(data.places) {
+          document.getElementById('places-input').value = JSON.stringify(data.places);
+        }
+      });
+    }
+
+    document.getElementById('save-btn').addEventListener('click', () => {
+      const hero = {
+        title: document.getElementById('hero-title-input').value,
+        intro: document.getElementById('hero-intro-input').value,
+        image: document.getElementById('hero-image-input').value
+      };
+
+      const about = {
+        title: document.getElementById('about-title-input').value,
+        text: document.getElementById('about-text-input').value,
+        video1: document.getElementById('about-video1-input').value,
+        video2: document.getElementById('about-video2-input').value
+      };
+
+      const services = {
+        items: document.getElementById('services-items-input').value.split(','),
+        video1: document.getElementById('services-video1-input').value,
+        video2: document.getElementById('services-video2-input').value
+      };
+
+      const contact = {
+        image: document.getElementById('contact-image-input').value,
+        whatsapp: document.getElementById('contact-whatsapp-input').value,
+        instagram: document.getElementById('contact-instagram-input').value,
+        tiktok: document.getElementById('contact-tiktok-input').value
+      };
+
+      let hours;
+      try { hours = JSON.parse(document.getElementById('hours-input').value); }
+      catch { hours = {}; }
+
+      let places;
+      try { places = JSON.parse(document.getElementById('places-input').value); }
+      catch { places = []; }
+
+      db.ref().set({ hero, about, services, contact, hours, places })
+        .then(() => document.getElementById('save-msg').textContent = 'Changes saved successfully!')
+        .catch(err => document.getElementById('save-msg').textContent = err.message);
+    });
+  </script>
 </body>
 </html>
