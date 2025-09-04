@@ -1,43 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Dashboard</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Panel - Kashmir Culture Holidays</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Welcome to Admin Dashboard</h1>
-  <p>Only logged-in users can see this page.</p>
-  <button id="logout-btn">Logout</button>
+<h1>Admin Panel</h1>
 
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
-  <script>
-    const firebaseConfig = {
-      apiKey: "YOUR_API_KEY",
-      authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-      projectId: "YOUR_PROJECT_ID",
-      storageBucket: "YOUR_PROJECT_ID.appspot.com",
-      messagingSenderId: "YOUR_SENDER_ID",
-      appId: "YOUR_APP_ID"
-    };
-    firebase.initializeApp(firebaseConfig);
-    const auth = firebase.auth();
+<!-- Login -->
+<div id="login-section">
+  <h2>Login</h2>
+  <input type="email" id="login-email" placeholder="Email">
+  <input type="password" id="login-password" placeholder="Password">
+  <button id="login-btn">Login</button>
+  <p id="login-error" style="color:red;"></p>
+</div>
 
-    // Redirect if not logged in
-    auth.onAuthStateChanged(user => {
-      if (!user) {
-        window.location.href = 'index.html';
-      }
-    });
+<!-- Admin Content -->
+<div id="admin-content" style="display:none;">
 
-    // Logout button
-    document.getElementById('logout-btn').addEventListener('click', () => {
-      auth.signOut().then(() => {
-        window.location.href = 'index.html';
-      });
-    });
-  </script>
+  <h2>Hero Section</h2>
+  <input type="text" id="hero-title" placeholder="Title"><br>
+  <input type="text" id="hero-subtitle" placeholder="Subtitle"><br>
+  <input type="text" id="hero-image" placeholder="Image URL"><br>
+  <button id="update-hero">Update Hero</button>
+
+  <h2>About Us</h2>
+  <textarea id="about-text" placeholder="About text"></textarea><br>
+  <button id="update-about">Update About</button>
+
+  <h2>Services</h2>
+  <textarea id="services-text" placeholder="One service per line"></textarea><br>
+  <button id="update-services">Update Services</button>
+
+  <h2>Destinations</h2>
+  <textarea id="destinations-text" placeholder='Format: Name,ImageURL'></textarea><br>
+  <button id="update-destinations">Update Destinations</button>
+
+  <h2>Business Hours</h2>
+  <textarea id="hours-text" placeholder='Format: Day,Hours'></textarea><br>
+  <button id="update-hours">Update Business Hours</button>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+
+<script>
+const firebaseConfig = {
+    apiKey: "AIzaSyAVdVydpsY4NLqUINnI2einUIEt2WDuvV0",
+    authDomain: "kashmir-466a5.firebaseapp.com",
+    projectId: "kashmir-466a5",
+    storageBucket: "kashmir-466a5.appspot.com",
+    messagingSenderId: "197822369582",
+    appId: "1:197822369582:web:506a533089ba8f00e334bf",
+    measurementId: "G-Q8RCH8W7DZ"
+};
+firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
+const db = firebase.database();
+
+// Login
+document.getElementById('login-btn').addEventListener('click', () => {
+  const email = document.getElementById('login-email').value;
+  const password = document.getElementById('login-password').value;
+  const errorMsg = document.getElementById('login-error');
+
+  auth.signInWithEmailAndPassword(email, password)
+    .then(() => {
+      document.getElementById('login-section').style.display = 'none';
+      document.getElementById('admin-content').style.display = 'block';
+      errorMsg.textContent = '';
+    })
+    .catch(err => { errorMsg.textContent = err.message; });
+});
+
+// Update Hero
+document.getElementById('update-hero').addEventListener('click', ()=>{
+  db.ref('hero').set({
+    title: document.getElementById('hero-title').value,
+    subtitle: document.getElementById('hero-subtitle').value,
+    image: document.getElementById('hero-image').value
+  });
+  alert('Hero updated!');
+});
+
+// Update About
+document.getElementById('update-about').addEventListener('click', ()=>{
+  db.ref('about').set({
+    text: document.getElementById('about-text').value
+  });
+  alert('About Us updated!');
+});
+
+// Update Services
+document.getElementById('update-services').addEventListener('click', ()=>{
+  const services = document.getElementById('services-text').value.split('\n').filter(s=>s.trim()!=='');
+  db.ref('services').set(services);
+  alert('Services updated!');
+});
+
+// Update Destinations
+document.getElementById('update-destinations').addEventListener('click', ()=>{
+  const lines = document.getElementById('destinations-text').value.split('\n').filter(l=>l.trim()!=='');
+  const destinations = lines.map(l=>{
+    const [name,image] = l.split(',');
+    return {name:name.trim(), image:image?image.trim():'default.jpg'};
+  });
+  db.ref('destinations').set(destinations);
+  alert('Destinations updated!');
+});
+
+// Update Business Hours
+document.getElementById('update-hours').addEventListener('click', ()=>{
+  const lines = document.getElementById('hours-text').value.split('\n').filter(l=>l.trim()!=='');
+  const hours = {};
+  lines.forEach(l=>{
+    const [day, time] = l.split(',');
+    if(day && time) hours[day.trim()] = time.trim();
+  });
+  db.ref('businessHours').set(hours);
+  alert('Business hours updated!');
+});
+</script>
 </body>
 </html>
